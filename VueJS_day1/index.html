@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <span>Ten toi la: {{ name }}</span>
+        <p>Using v-html directive:
+            <span v-html="rawHtml"></span>
+        </p>
+        <p>Using curly braces: {{ rawHtml }}</p>
+        <p v-if="seen">Now you see me</p>
+        <p v-else="!seen">Now you don't</p>
+        <p v-show="seen">Show</p>
+        <a href="#" @click="hideThisLink" v-show="showLink">Click to hide the link</a>
+        <br><br>
+        <a :href="amazon">Click to go to amazon</a><br>
+        <p :class="{green: isGreen}">This is a paragraph.</p>
+        <button @click='changeColor'>Change color of above para</button>
+        <p :style="{color: myColor}">This paragraph depends on my color</p>
+
+        <ul>
+            <li v-for="hero in heroes">
+                <p>{{ hero.name}} - {{ hero.age }} years old</p>
+            </li>
+        </ul>
+        <input type="text" placeholder="type your name here" v-model="yourName">
+        <p>Your name is: {{ yourName }}</p>
+
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        <br><br>
+        <select v-model="selected">
+            <option disabled value="">Please select one</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
